@@ -16,7 +16,13 @@ namespace WebApplication.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Your application description page.";
+            ViewData["HOSTNAME"] = System.Environment.MachineName;
+            ViewData["PROCESSORS"] = System.Environment.ProcessorCount;
+            ViewData["OSARCHITECTURE"] = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture;
+            ViewData["OSDESCRIPTION"] = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+            ViewData["PROCESSARCHITECTURE"] = System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture;
+            ViewData["FRAMEWORKDESCRIPTION"] = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
             return View();
         }
 
